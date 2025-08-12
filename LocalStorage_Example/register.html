@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register</title>
+</head>
+<style>
+    body { display: flex; font-family: Arial, sans-serif; margin: 0; height: 100vh; }
+    .left { width: 60.0%; }
+    .left img { width: 100%; height: 100vh; object-fit: cover; }
+    .right { width: 40.0%; padding: 40px; box-sizing: border-box; }
+    h2 { margin-top: 0; }
+    input, button { width: 100%; padding: 10px; margin: 10px 0; box-sizing: border-box; }
+    button { background: black; color: white; border: none; cursor: pointer; }
+    a { text-decoration: none; color: blue; }
+  </style>
+<body>
+    <div class="left">
+    <img src="porsche-911.webp" alt="Register">
+  </div>
+    <div class="right">
+        <h2><strong>PORSCHE</strong></h2>
+    <h3>Welcome! Log in with your Porsche ID</h3>
+    <p>Please enter the e-mail address, you defined as your Porsche ID.</p>
+        <form id="registerForm" action="" method="post">
+            <div>
+                <label for="username">Username:</label>
+                <input type="text" id="username" name="username" required>
+            </div>
+            <div>
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required>
+            </div>
+            <div>
+                <label for="password">Password:</label>
+                <input type="password" id="password" name="password" required>
+            </div>
+            <div>
+                <label for="confirm_password">Confirm Password:</label>
+                <input type="password" id="confirmPassword" name="confirmPassword" required>
+            </div>
+            <div>
+                <span>Already have an account? </span><a href="login.html">Sign in</a>
+            </div>
+            <button type="submit" id="registerButton">Register</button>
+        </form>
+    </div>
+</body>
+<script src="register.js"></script>
+</html>

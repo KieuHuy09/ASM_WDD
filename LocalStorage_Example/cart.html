@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <title>Giỏ hàng - Porsche</title>
+  <style>
+    body { font-family: Arial, sans-serif; padding: 40px; background: #f9f9f9; }
+    h2 { text-align: center; color: #000; }
+    table { width: 100%; border-collapse: collapse; margin-top: 20px; background: #fff; }
+    th, td { padding: 15px; border: 1px solid #ccc; text-align: center; }
+    th { background-color: #eee; }
+    .btn { margin-top: 20px; background: black; color: white; padding: 12px 20px; border: none; cursor: pointer; }
+    .btn:hover { background: #333; }
+    img { max-width: 100px; }
+  </style>
+</head>
+<body>
+
+  <h2>Giỏ hàng của bạn</h2>
+  <table>
+    <thead>
+  <tr>
+    <th>Hình ảnh</th>
+    <th>Tên xe</th>
+    <th>Số lượng</th>
+    <th>Giá</th>
+    <th>Tổng</th>
+  </tr>
+</thead>
+
+
+    <tbody id="cartTableBody">
+      <!-- Dữ liệu sẽ được chèn bằng JavaScript -->
+    </tbody>
+  </table>
+
+  <div style="text-align: center;">
+    <button class="btn" onclick="window.location.href='index.html'">Tiếp tục mua sắm</button>
+  </div>
+
+  <script>
+    // Lấy dữ liệu giỏ hàng từ localStorage
+    let cart = JSON.parse(localStorage.getItem('cart')) || [];
+    let tbody = document.getElementById('cartTableBody');
+
+    if (cart.length === 0) {
+      tbody.innerHTML = '<tr><td colspan="5">Giỏ hàng trống</td></tr>';
+    } else {
+      cart.forEach(item => {
+        let total = item.price * item.quantity;
+        let row = `
+          <tr>
+            <td><img src="${item.image}" alt="${item.name}"></td>
+            <td>${item.name}</td>
+            <td>${item.quantity}</td>
+            <td>${item.price.toLocaleString()}₫</td>
+            <td>${total.toLocaleString()}₫</td>
+          </tr>
+        `;
+        tbody.innerHTML += row;
+      });
+    }
+  </script>
+</body>
+</html>

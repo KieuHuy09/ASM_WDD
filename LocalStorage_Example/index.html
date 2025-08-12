@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trang chủ Porsche</title>
+    <style>
+    body { font-family: Arial, sans-serif; margin: 0; }
+    .header { display: flex; align-items: center; justify-content: space-between; padding: 10px 30px; background: #f2f2f2; }
+    .logo img { height: 50px; }
+    .menu { display: flex; gap: 10px; }
+    .menu select, .menu a { padding: 8px 12px; }
+    .search-contact { display: flex; align-items: center; gap: 10px; }
+    .main img { width: 100%; height: 600px; object-fit: cover; }
+    a.button { background: blue; color: white; padding: 10px; text-decoration: none; border-radius: 4px; }
+
+    /* Danh sách sản phẩm */
+    .product-list {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 20px;
+        padding: 20px;
+    }
+    .product {
+        border: 1px solid #ccc;
+        padding: 15px;
+        background: #fff;
+        text-align: center;
+        border-radius: 8px;
+    }
+    .product img {
+        width: 100%;
+        height: 180px;
+        object-fit: cover;
+        border-radius: 8px;
+    }
+    .product h3 { margin: 10px 0 5px; }
+    .product p { margin: 0 0 10px; }
+    .product button {
+        background: black;
+        color: white;
+        border: none;
+        padding: 10px 15px;
+        cursor: pointer;
+        border-radius: 4px;
+    }
+    .product button:hover {
+        background: #333;
+    }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <a href="cart.html" title="Giỏ hàng">🛒</a>
+
+        <div class="logo">
+            <a href="myprofile.html">
+                <img src="logo.jfif" alt="Porsche Logo">
+            </a>
+        </div>
+
+        <div class="menu">
+            <select><option>Các dòng xe</option></select>
+            <select><option>Xe mới</option></select>
+            <select><option>Trung tâm Porsche</option></select>
+            <select><option>Dịch vụ</option></select>
+            <select><option>Về Porsche</option></select>
+            <select><option>Trạm sạc Porsche</option></select>
+            <select><option>Tiêu điểm</option></select>
+        </div>
+        <div class="search-contact">
+            <input type="text" placeholder="Search">
+            <a href="contact.html" class="button">Liên hệ</a>
+        </div>
+    </div>
+
+    <div class="main">
+        <img src="porsche-88.jpg" alt="Porsche Cars">
+    </div>
+
+    <!-- Danh sách xe -->
+    <div class="product-list">
+        <div class="product">
+            <img src="911-carrera.avif" alt="Porsche 911 Carrera">
+            <h3>Porsche 911 Carrera</h3>
+            <p>Giá: 8,000,000,000 VND</p>
+            <button onclick="addToCart('Porsche 911 Carrera', 8000000000, '911-carrera.avif')">Thêm vào giỏ hàng</button>
+        </div>
+        <div class="product">
+            <img src="Porsche Cayenne.jfif" alt="Porsche Cayenne">
+            <h3>Porsche Cayenne</h3>
+            <p>Giá: 5,500,000,000 VND</p>
+            <button onclick="addToCart('Porsche Cayenne', 5500000000, 'Porsche Cayenne.jfif')">Thêm vào giỏ hàng</button>
+        </div>
+        <div class="product">
+            <img src="Porsche Taycan.jfif" alt="Porsche Taycan">
+            <h3>Porsche Taycan</h3>
+            <p>Giá: 4,200,000,000 VND</p>
+            <button onclick="addToCart('Porsche Taycan', 4200000000, 'Porsche Taycan.jfif')">Thêm vào giỏ hàng</button>
+        </div>
+        <div class="product">
+            <img src="Porsche Macan.jfif" alt="Porsche Macan">
+            <h3>Porsche Macan</h3>
+            <p>Giá: 3,000,000,000 VND</p>
+            <button onclick="addToCart('Porsche Macan', 3000000000, 'Porsche Macan.jfif')">Thêm vào giỏ hàng</button>
+        </div>
+        <div class="product">
+            <img src="Porsche Panamera.jfif" alt="Porsche Panamera">
+            <h3>Porsche Panamera</h3>
+            <p>Giá: 6,200,000,000 VND</p>
+            <button onclick="addToCart('Porsche Panamera', 6200000000, 'Porsche Panamera.jfif')">Thêm vào giỏ hàng</button>
+        </div>
+        <div class="product">
+            <img src="Porsche 718 Boxster.jfif" alt="Porsche 718 Boxster">
+            <h3>Porsche 718 Boxster</h3>
+            <p>Giá: 3,800,000,000 VND</p>
+            <button onclick="addToCart('Porsche 718 Boxster', 3800000000, 'Porsche 718 Boxster.jfif')">Thêm vào giỏ hàng</button>
+        </div>
+    </div>
+
+    <span id="welcomeMessage"></span>
+    <br>
+    <button id="logoutButton">Log out</button>
+
+    <script src="index.js"></script>
+</body>
+</html>
